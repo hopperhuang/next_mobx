@@ -15,7 +15,7 @@ class TagsInput extends React.Component {
               <option value="node.js">node.js</option>
             </select> &nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
             <select value={tag.score} onChange={(e) => { this.props.changeScore(tag.id, e.target.value); }}>
-              <option value="heigh">高级</option>
+              <option value="high">高级</option>
               <option value="middle">中级</option>
               <option value="expert">专家</option>
               <option value="low">初级</option>

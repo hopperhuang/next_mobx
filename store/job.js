@@ -1,5 +1,6 @@
 import { observable, action } from 'mobx';
 
+
 class Intro {
     @observable positon = '前端开发工程师'
     @observable exp = '不限'
@@ -13,7 +14,7 @@ class Intro {
     @action changeExp = (value) => { this.exp = value; }
     @action addTags = () => {
       const { id } = this;
-      this.tags.push({ value: 'js', score: 'hgith', id });
+      this.tags.push({ value: 'js', score: 'expert', id });
       this.id += 1;
     }
     @action changeTag = (id, value) => {
