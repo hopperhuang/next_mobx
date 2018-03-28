@@ -13,7 +13,7 @@ class Market extends React.Component {
     return (
       <div>
         {this.props.store.jobs.map(job => (
-          <div onClick={() => { Router.push('/job'); }} className="job" key={job.id} >
+          <div onClick={() => { Router.push('/jd'); }} className="job" key={job.id} >
             <div>公司：{job.company}</div>
             <div>职位：{job.position}</div>
             <div>技能与岗位吻合度：{job.likely}</div>

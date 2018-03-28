@@ -1,6 +1,9 @@
+import Header from '../components/Header';
+
 export default function () {
   return (
     <div>
+      <Header title="自我增值" />
       <p>学习如下课程提高你的技能评分</p>
       <div>
         <p>js高级课程</p>

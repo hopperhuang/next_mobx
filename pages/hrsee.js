@@ -1,9 +1,10 @@
 import React from 'react';
-// import Head from 'next/head';
+import Router from 'next/router';
 import { Provider } from 'mobx-react';
 import { initStore } from '../store/intro';
-import Page from '../components/Intro';
+import Page from '../components/Person';
 import Header from '../components/Header';
+
 
 export default class Counter extends React.Component {
   static getInitialProps({ req }) {
@@ -14,21 +15,31 @@ export default class Counter extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(233);
     this.store = initStore(props.isServer);
   }
 
   render() {
     return (
       <div className="container" >
-        <Header title="xxx的个人简历" />
+        <Header title="我的个人简历" />
         <Provider store={this.store}>
           <Page />
         </Provider>
+        <div className="bottomBar" >
+          <p>跟他聊一聊</p>
+        </div>
         <style jsx>{`
       .container {
           box-sizing: border-box;
           padding: 0 0.2rem;
+      }
+      .bottomBar {
+        display: flex;
+        font-size: 0.5rem;
+        justify-content: space-between;
+      }
+      .bottomBar div {
+        border: 0.1rem solid black;
       }
     `}
         </style>

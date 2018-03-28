@@ -13,7 +13,7 @@ class Intro extends React.Component {
     return (
       <div>
         <div className="personal" >
-          {this.props.store.pModal ? <div className="modal" onClick={this.props.store.hidePmodal} >请先购买</div> : ''}
+          {this.props.store.pModal ? <div className="modal" onClick={this.props.store.hidePmodal} >请先消费积分购买</div> : ''}
           <p className="name" >姓名：{this.props.store.info.name}</p>
           <p className="age" >年龄：{this.props.store.info.age}</p>
           <p className="tel" >联系电话：{this.props.store.info.tel}</p>
@@ -24,12 +24,13 @@ class Intro extends React.Component {
         </div>
         <Tags tags={this.props.store.info.tags} />
         <div className="expAndEdu" >
-          {this.props.store.eModal ? <div className="modal" onClick={this.props.store.hideEmodal} >请先购买</div> : ''}
+          {this.props.store.eModal ? <div className="modal" onClick={this.props.store.hideEmodal} >请先消费积分购买</div> : ''}
           <p className="intro" >个人工作经历:</p>
           <Exp exp={this.props.store.info.exp} />
           <p className="edu" >个人教育经历</p>
           <Edu edu={this.props.store.info.edu} />
           <p className="spExp">个人经历：{this.props.store.info.specialExp}</p>
+          <div className="talk" >找他聊聊</div>
         </div>
         <style jsx>{`
       .name, .age, .tel, .email, .intro, .edu, .spExp {
@@ -37,6 +38,11 @@ class Intro extends React.Component {
         line-height: .5rem;
         vertical-align: middle;
         margin-bottom: .2rem;
+      }
+      .talk {
+        width: 100%;
+        text-align: center;
+        border: 2px solid black;
       }
       .personal {
         width: 100%;

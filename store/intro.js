@@ -25,6 +25,7 @@ class Intro {
       this.eModal = false;
     }
     @action getInfo = () => {
+      console.log('get info');
       setTimeout(() => {
         this.info = {
           name: 'huangjiawei',
@@ -86,7 +87,10 @@ export function initStore(isServer) {
   if (isServer) {
     return new Intro(isServer);
   } else {
+    console.log(store);
+    // signleton 模式保持store不变
     if (store === null) {
+      console.log('new in client');
       store = new Intro(isServer);
     }
     return store;
