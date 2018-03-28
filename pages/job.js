@@ -1,6 +1,8 @@
 import React from 'react';
 // import Head from 'next/head';
 import { Provider } from 'mobx-react';
+// import DevTools from 'mobx-react-devtools';
+import makeInspectable from 'mobx-devtools-mst';
 import { initStore } from '../store/job';
 import Job from '../components/Job';
 import Header from '../components/Header';
@@ -15,6 +17,8 @@ export default class Counter extends React.Component {
   constructor(props) {
     super(props);
     this.store = initStore(props.isServer);
+    // 加入调试器
+    makeInspectable(this.store);
   }
 
   render() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { inject, observer } from 'mobx-react';
+// import DevTools from 'mobx-react-devtools';
 import TagsInput from './TagsInput';
 
 
@@ -62,6 +63,7 @@ class Job extends React.Component {
                 `
             }
         </style>
+        {/* <DevTools /> */}
       </div>
     );
   }

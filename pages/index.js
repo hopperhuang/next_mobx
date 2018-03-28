@@ -1,30 +1,36 @@
 import React from 'react';
 // import Head from 'next/head';
 import { Provider } from 'mobx-react';
-import { initStore } from '../store/index';
-import Page from '../components/Page';
+import { initStore } from '../store/intro';
+import Page from '../components/Intro';
 import Header from '../components/Header';
 
 export default class Counter extends React.Component {
   static getInitialProps({ req }) {
     const isServer = !!req;
     const store = initStore(isServer);
-    return { lastUpdate: store.lastUpdate, isServer };
+    return { info: store.info, isServer };
   }
 
   constructor(props) {
     super(props);
-    this.store = initStore(props.isServer, props.lastUpdate);
+    this.store = initStore(props.isServer);
   }
 
   render() {
     return (
-      <div>
-        <Header title="My Demo page" />
+      <div className="container" >
+        <Header title="xxx的个人简历" />
         <Provider store={this.store}>
-          <Page title="Index Page" linkTo="/other" />
+          <Page />
         </Provider>
-        <img src="/static/my-image.jpg" alt="" />
+        <style jsx>{`
+      .container {
+          box-sizing: border-box;
+          padding: 0 0.2rem;
+      }
+    `}
+        </style>
       </div>
     );
   }

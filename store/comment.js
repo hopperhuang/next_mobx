@@ -1,4 +1,4 @@
-import { observable, action } from 'mobx';
+import { observable, action, autorun } from 'mobx';
 
 class Intro {
     @observable commentTags = []
@@ -50,6 +50,7 @@ export function initStore(isServer) {
     if (store === null) {
       store = new Intro(isServer);
     }
+    autorun(() => { console.log(store.totalScore); });
     return store;
   }
 }
