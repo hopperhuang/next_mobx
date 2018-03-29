@@ -7,8 +7,11 @@ import TagsInput from './TagsInput';
 
 @inject('store') @observer
 class Job extends React.Component {
-  componentDidMount() {
-    // this.props.store.getInfo();
+  // componentDidMount() {
+  //   // this.props.store.getInfo();
+  // }
+  componentWillUpdate() {
+    console.log('will update');
   }
   render() {
     return (

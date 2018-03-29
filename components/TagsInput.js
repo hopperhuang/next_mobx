@@ -3,6 +3,12 @@ import React from 'react';
 
 @observer
 class TagsInput extends React.Component {
+  // componentWillMount() {
+  //   console.log('will mount');
+  // }
+  componentWillUpdate() {
+    console.log('will update');
+  }
   render() {
     return (
       <div className="container" >
