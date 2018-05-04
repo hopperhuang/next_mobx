@@ -1,6 +1,7 @@
 export default (props) => {
   return (
     <div className={props.light ? 'light' : ''}>
+      <div>this is clock</div>
       {format(new Date(props.lastUpdate))}
       <style jsx>{`
         div {
